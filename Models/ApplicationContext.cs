@@ -8,7 +8,7 @@ namespace RocketApi.Models
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
-        {}
+        { }
 
         public DbSet<Elevator> elevators { get; set; }
 
@@ -22,6 +22,8 @@ namespace RocketApi.Models
         public DbSet<buildings> buildings { get; set; }
 
         public DbSet<BuildingDetails> building_details { get; set; }
+
+        public DbSet<interventions> interventions { get; set; }
 
 
         //public DbSet<Lead> leads { get; set; }

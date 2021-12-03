@@ -8,7 +8,7 @@ namespace RocketApi.Models
 
         public long author_id { get; set; }
         public long customer_id { get; set; }
-        public long employee_id { get; set; }
+        public long? employee_id { get; set; }
         public long building_id { get; set; }
         public long battery_id { get; set; }
         public long? column_id { get; set; }

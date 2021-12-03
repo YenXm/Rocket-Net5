@@ -10,6 +10,3 @@ To answer the question and the 2 put requests with REST Api, use `Postman`: use 
 
 
 <br>
-
-# NOTE:
- Each link works individually as well , by changing the ID or status you can test different senarios on each link. 

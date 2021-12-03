@@ -2,18 +2,11 @@
 
 Project built with dotnet 5.0.12
 
-To answer the 9 questions below with REST Api, use `Postman`: import the link below on your postman, to have access to the Rocket Elevator REST API collection:
+To answer the question and the 2 put requests with REST Api, use `Postman`: use the link below to go to a public workspace and then go in the week9 collection.
 
 <br>
 
-[Postman Collection](https://www.getpostman.com/collections/908796cf0a1bff84363a)
-
-
-<br>
-
-# Rocket Elevators REST API Collection includes: 
-
-[This is the workspace with the queries for this week](https://www.postman.com/lunar-star-117192/workspace/ysjz1xiv-hvsshvjehrikk-igsy2bcxpasta5moennmozp-ihwcq2vzwaxrymvu-tzexbgs3-sm-vbz-7enycteaiaq7x-boeckmunesnl-qitlrrzwhxix-nmxfh6w)
+[Postman Collection](https://www.postman.com/lunar-star-117192/workspace/ysjz1xiv-hvsshvjehrikk-igsy2bcxpasta5moennmozp-ihwcq2vzwaxrymvu-tzexbgs3-sm-vbz-7enycteaiaq7x-boeckmunesnl-qitlrrzwhxix-nmxfh6w)
 
 
 <br>

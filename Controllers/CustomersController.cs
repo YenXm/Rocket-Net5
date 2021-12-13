@@ -36,10 +36,10 @@ namespace RocketApi.Controllers
 
         [HttpGet("{customer_email}")]
         // Email of the customer that we want to verify existence of
-        public async Task<bool> GetIfExist(string customerEmail)
+        public async Task<bool> GetIfExist(string customer_email)
         {
             // Verify if a customer with that email exists
-            return _context.customers.Any(e => e.email_of_the_company_contact == customerEmail);
+            return _context.customers.Any(e => e.email_of_the_company_contact == customer_email);
         }
 
 

@@ -36,10 +36,18 @@ namespace RocketApi.Controllers
 
         [HttpGet("{customer_email}")]
         // Email of the customer that we want to verify existence of
-        public async Task<bool> GetIfExist(string customer_email)
+        public bool GetIfExist(string customer_email)
         {
             // Verify if a customer with that email exists
             return _context.customers.Any(e => e.email_of_the_company_contact == customer_email);
+        }
+
+        [HttpGet("getId/{customer_email}")]
+        // Return the id of a customer that we want to find with the email
+        public async Task<long> GetCustomerId(string customer_email)
+        {
+            var customer =  await _context.customers.Where(c => c.email_of_the_company_contact == customer_email).FirstAsync();
+            return customer.id;
         }
 
 

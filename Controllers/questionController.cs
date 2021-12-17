@@ -19,6 +19,7 @@ namespace RocketApi.Controllers
         public questionController(PostGresqlContext pContext, ApplicationContext context)
         {
             // Declare the mysql database context and the psql database context.
+            Console.WriteLine(pContext);
             _context = context;
             _pContext = pContext;
         }

@@ -19,3 +19,6 @@ Project built with dotnet 5.0.12
 [Postinterventions](https://github.com/YenXm/Rocket-Net5/blob/c6de168b0b4d6bcde741fb73a88efbe4b5973682/Controllers/interventionController.cs#L152) Not new but modified.
 
 
+# IMPORTANT
+
+[THIS IS THE REPO OF THE GRAPHQL API WHERE THE REQUEST FOR THE CONSUMER PRODUCT IS HANDLED](https://github.com/YenXm/GraphQL_API.git)

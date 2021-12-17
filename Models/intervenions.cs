@@ -3,7 +3,7 @@ using System;
 namespace RocketApi.Models
 {
     public class interventions
-    {
+    { 
         public long id { get; set; }
 
         public long author_id { get; set; }

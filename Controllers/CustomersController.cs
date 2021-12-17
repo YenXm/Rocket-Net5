@@ -58,7 +58,9 @@ namespace RocketApi.Controllers
         [HttpGet("information/{email}")]
         public async Task<string> GetCustomerInformation(string email)
         {
+            //Return all the information of a customer that we want to find with the email
             var customer = await _context.customers.Where(c => c.email_of_the_company_contact == email).FirstAsync();
+            // We return it in Json format
             var customerJson = JsonSerializer.Serialize(customer);
             return customerJson;
         }
@@ -67,7 +69,8 @@ namespace RocketApi.Controllers
         [HttpPut("updateProfile")]
         public async Task<IActionResult> updateProfile(Customer customer)
         {
-
+            // Update the information of a customer.
+            // Use the id that come in the content of the request to determine where to do the change
 
             // _context.Entry(inter).State = EntityState.Detached;
             _context.Entry(customer).State = EntityState.Modified;

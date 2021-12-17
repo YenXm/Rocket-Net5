@@ -2,11 +2,20 @@
 
 Project built with dotnet 5.0.12
 
-To answer the question and the 2 put requests with REST Api, use `Postman`: use the link below to go to a public workspace and then go in the week9 collection.
 
-<br>
+## __**New Endpoint**__
 
-[Postman Collection](https://www.postman.com/lunar-star-117192/workspace/ysjz1xiv-hvsshvjehrikk-igsy2bcxpasta5moennmozp-ihwcq2vzwaxrymvu-tzexbgs3-sm-vbz-7enycteaiaq7x-boeckmunesnl-qitlrrzwhxix-nmxfh6w)
+### __Get__ __Endpoint__
+[GetIfExist](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L41)
+
+[GetCustomerId](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L50)
+
+[GetCustomerInformation](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L59)
+
+### __Put__ __Endpoint__
+[updateProfile](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L70)
+
+### __Post__ __Endpoint__
+[Postinterventions](https://github.com/YenXm/Rocket-Net5/blob/c6de168b0b4d6bcde741fb73a88efbe4b5973682/Controllers/interventionController.cs#L152) Not new but modified.
 
 
-<br>

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RocketApi.Models;
+using System.Text.Json;
 
 namespace RocketApi.Controllers
 {
@@ -34,6 +35,7 @@ namespace RocketApi.Controllers
             return await _context.customers.ToListAsync();
         }
 
+        //-------------------------------------------------- Verify Customer Existance ----------------------------------------------------\\
         [HttpGet("{customer_email}")]
         // Email of the customer that we want to verify existence of
         public bool GetIfExist(string customer_email)
@@ -42,6 +44,7 @@ namespace RocketApi.Controllers
             return _context.customers.Any(e => e.email_of_the_company_contact == customer_email);
         }
 
+        //-------------------------------------------------- Get customer Id  ----------------------------------------------------\\
         [HttpGet("getId/{customer_email}")]
         // Return the id of a customer that we want to find with the email
         public async Task<long> GetCustomerId(string customer_email)
@@ -50,6 +53,54 @@ namespace RocketApi.Controllers
             return customer.id;
         }
 
+        //-------------------------------------------------- Get customer information by email ----------------------------------------------------\\
 
+        [HttpGet("information/{email}")]
+        public async Task<string> GetCustomerInformation(string email)
+        {
+            var customer = await _context.customers.Where(c => c.email_of_the_company_contact == email).FirstAsync();
+            var customerJson = JsonSerializer.Serialize(customer);
+            return customerJson;
+        }
+
+        //-------------------------------------------------- Change Customer information ----------------------------------------------------\\\
+        [HttpPut("updateProfile")]
+        public async Task<IActionResult> updateProfile(Customer customer)
+        {
+
+
+            // _context.Entry(inter).State = EntityState.Detached;
+            _context.Entry(customer).State = EntityState.Modified;
+
+
+            try
+            
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!customersExists(customer.id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool customersExists(long id)
+        {
+            return _context.interventions.Any(e => e.id == id);
+        }
+
+        private async Task<Customer> Customer(long id)
+        {
+            return await _context.customers.FindAsync(id);
+        }
     }
 }

@@ -21,12 +21,20 @@ namespace RocketApi.Controllers
         }
 
         //-------------------------------------------------- Get all buildings ----------------------------------------------------\\
-        
+
         // GET: api/buildings
         [HttpGet]
         public async Task<ActionResult<IEnumerable<buildings>>> Getbuildings()
         {
             return await _context.buildings.ToListAsync();
+        }
+
+        //-------------------------------------------------- Get building counts ----------------------------------------------------\\
+        // GET: api/buildings/count
+        [HttpGet("count")]
+        public async Task<int> GetbuildingsCount()
+        {
+            return await _context.buildings.CountAsync();
         }
 
         //----------------------------------- Retrieving all information from a specific Building -----------------------------------\\
@@ -46,7 +54,7 @@ namespace RocketApi.Controllers
         }
 
         //--------- Retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention ---------\\
-        
+
         // GET: api/buildings/get-intervention-buildings
         [HttpGet("get-intervention-buildings")]
         public async Task<ActionResult<List<buildings>>> GetInterventionBuildings()
@@ -56,13 +64,13 @@ namespace RocketApi.Controllers
             // and in elevtors, find column.id  that is equal to elevators.column_id (elevator that is part of the column)
             // and add the building they're part of in the building list.
             IQueryable<buildings> buildings_list = from AllBuildings in _context.buildings
-            join batteries in _context.batteries on AllBuildings.id equals batteries.building_id
-            join columns in _context.columns on batteries.id equals columns.battery_id
-            join elevators in _context.elevators on columns.id equals elevators.column_id
-            where (batteries.status.Equals("Intervention") || batteries.status.Equals("intervention")) || 
-            (columns.status.Equals("Intervention") || columns.status.Equals("intervention")) || 
-            (elevators.status.Equals("Intervention") || elevators.status.Equals("intervention"))
-            select AllBuildings;
+                                                   join batteries in _context.batteries on AllBuildings.id equals batteries.building_id
+                                                   join columns in _context.columns on batteries.id equals columns.battery_id
+                                                   join elevators in _context.elevators on columns.id equals elevators.column_id
+                                                   where (batteries.status.Equals("Intervention") || batteries.status.Equals("intervention")) ||
+                                                   (columns.status.Equals("Intervention") || columns.status.Equals("intervention")) ||
+                                                   (elevators.status.Equals("Intervention") || elevators.status.Equals("intervention"))
+                                                   select AllBuildings;
 
             return await buildings_list.Distinct().ToListAsync();
         }

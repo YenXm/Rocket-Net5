@@ -30,6 +30,12 @@ namespace RocketApi.Controllers
         {
             return await _context.elevators.ToListAsync();
         }
+        // GET: api/elevators/count
+        [HttpGet("count")]
+        public async Task<int> GetElevatorsCount()
+        {
+            return await _context.elevators.CountAsync();
+        }
 
         //----------------------------------- Retrieving all information from a specific Elevator -----------------------------------\\
 
@@ -68,6 +74,15 @@ namespace RocketApi.Controllers
         public async Task<dynamic> GetElevatorsNotInUse()
         {
             return await _context.elevators.Where(b => ((b.status == "Offline") || (b.status == "Intervention"))).ToListAsync();
+        }
+
+        //------------------- Retrieving the number of Elevators that are not in operation at the time of the request -------------------\\
+
+        // GET: api/elevators/elevators-not-in-use/count
+        [HttpGet("elevators-not-in-use/count")]
+        public async Task<int> GetElevatorsNotInUseCount()
+        {
+            return await _context.elevators.Where(b => ((b.status == "Offline") || (b.status == "Intervention"))).CountAsync();
         }
         
         //----------------------------------- Changing the status of a specific Elevator -----------------------------------\\

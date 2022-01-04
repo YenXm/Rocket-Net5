@@ -3,16 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using RocketApi.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using RocketApi.Models;
 using System.Text.Json;
-
 namespace RocketApi.Controllers
 {
     [Route("api/[controller]")]
@@ -34,6 +26,14 @@ namespace RocketApi.Controllers
         {
             return await _context.customers.ToListAsync();
         }
+        //-------------------------------------------------- Get Customers Count ----------------------------------------------------\\
+
+        //Get: api/Customers/count
+        [HttpGet("count")]
+        public async Task<int> GetCustomersCount()
+        {
+            return await _context.customers.CountAsync();
+        }
 
         //-------------------------------------------------- Verify Customer Existance ----------------------------------------------------\\
         [HttpGet("{customer_email}")]
@@ -49,7 +49,7 @@ namespace RocketApi.Controllers
         // Return the id of a customer that we want to find with the email
         public async Task<long> GetCustomerId(string customer_email)
         {
-            var customer =  await _context.customers.Where(c => c.email_of_the_company_contact == customer_email).FirstAsync();
+            var customer = await _context.customers.Where(c => c.email_of_the_company_contact == customer_email).FirstAsync();
             return customer.id;
         }
 
@@ -77,7 +77,7 @@ namespace RocketApi.Controllers
 
 
             try
-            
+
             {
                 await _context.SaveChangesAsync();
             }

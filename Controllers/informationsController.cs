@@ -12,12 +12,11 @@ namespace RocketApi.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class informationController : ControllerBase
-    {        private readonly ApplicationContext _context;
+    {        
+        private readonly ApplicationContext _context;
 
-        public informationController(PostGresqlContext pContext, ApplicationContext context)
+        public informationController( ApplicationContext context)
         {
-            // Declare the mysql database context and the psql database context.
-            Console.WriteLine(pContext);
             _context = context;
         }
 

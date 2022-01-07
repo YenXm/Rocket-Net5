@@ -1,4 +1,5 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace RocketApi.Models
 {
@@ -19,5 +20,11 @@ namespace RocketApi.Models
         public long longitude { get; set; }
         public long latitude { get; set; }
 
+    }
+
+    [Keyless]
+    public class City
+    {
+        public string city {get; set; }
     }
 }

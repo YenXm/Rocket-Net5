@@ -6,19 +6,9 @@ Project built with dotnet 5.0.12
 ## __**New Endpoint**__
 
 ### __Get__ __Endpoint__
-[GetIfExist](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L41)
+[GetElevatorInformation](https://github.com/YenXm/Rocket-Net5/blob/2da1a3a7033111debd3359cc337deef0789e10d4/Controllers/informationsController.cs#L33)
+[GetElevatorStatus](https://github.com/YenXm/Rocket-Net5/blob/59c4abb9d96772d1524643d6ae67f5fa151c0588/Controllers/ElevatorsController.cs#L57)
 
-[GetCustomerId](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L50)
+Most Endpoint in the information controller were made for benchmarking. 
 
-[GetCustomerInformation](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L59)
-
-### __Put__ __Endpoint__
-[updateProfile](https://github.com/YenXm/Rocket-Net5/blob/1d1afe017003493d3f5ed69b6396b9f510bcd8e4/Controllers/CustomersController.cs#L70)
-
-### __Post__ __Endpoint__
-[Postinterventions](https://github.com/YenXm/Rocket-Net5/blob/c6de168b0b4d6bcde741fb73a88efbe4b5973682/Controllers/interventionController.cs#L152) Not new but modified.
-
-
-# IMPORTANT
-
-[THIS IS THE REPO OF THE GRAPHQL API WHERE THE REQUEST FOR THE CONSUMER PRODUCT IS HANDLED](https://github.com/YenXm/GraphQL_API.git)
+More information abount benchmarking [THERE]()

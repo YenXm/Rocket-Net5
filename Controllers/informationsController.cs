@@ -2,12 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MySql.Data.MySqlClient;
 using RocketApi.Models;
 
 
@@ -32,7 +29,7 @@ namespace RocketApi.Controllers
         [HttpGet]
         public async Task<List<int>> GetAllCount()
         {
-
+            // Get the count of various entities for the "what is going on at rocket elevator" call.
 
             int notInUseElevatorCount = await DirectCount();
             int elevatorCount = await _context.elevators.CountAsync();
@@ -45,7 +42,7 @@ namespace RocketApi.Controllers
             return new List<int> { elevatorCount, buildingCount, customerCount, notInUseElevatorCount, cityCount, quoteCount, leadCount, batteryCount };
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------BENCHMARKING-------------------------------------------------------------------
         // This part tries multiple way of finding the number of distinct city
         [HttpGet("HashSetCount")]
         public async Task<int> HashSetCount()
@@ -79,7 +76,6 @@ namespace RocketApi.Controllers
             return _context.city.FromSqlRaw("SELECT DISTINCT city FROM addresses").Count();
         }
 
-        //-----------------------------------------------------------------------------------------------------------
 
         //This part tries multiple way to get the number of elevator that are not running.
 

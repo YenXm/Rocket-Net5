@@ -27,6 +27,7 @@ namespace RocketApi.Models
         public DbSet<User> users { get; set; }
         public DbSet<Quotes> quotes { get; set; }
         public DbSet<City> city { get; set; }
+        public DbSet<Employee> employees { get; set;}
 
 
         //public DbSet<Lead> leads { get; set; }

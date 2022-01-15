@@ -2,7 +2,7 @@
 
 Project built with dotnet 5.0.12
 
-## \***\*New Endpoint\*\***
+## ****New Endpoint****
 
 ### **Get** **Endpoint**
 
@@ -16,7 +16,7 @@ I do not have a endpoint that return a list of elevetor employee, instead I have
 
 [VerifyEmail](https://github.com/YenXm/Rocket-Net5/blob/ba24e20a6aea0979aef08adb670dbcfd04007993/Controllers/EmployeesController.cs#L104)
 
-## Get Request
+## **Get** **Endpoint**
 
 | resource                                | description                                                                                                        |
 | :-------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -43,20 +43,14 @@ I do not have a endpoint that return a list of elevetor employee, instead I have
 | `/elevators/update/{id}/{status}`       | Change the status of a specific elevator                                                                           |
 | `/buildings/count`                      | Amount of buildings                                                                                                |
 | `/elevators/count`                      | Amount of elevators                                                                                                |
-|                                         |
 | `/buildings/get-intervention-buildings` | Retrieve a Retreive list of buildings that contain at least one battery, column or elevator requiring intervention |
-|
 | `/Employees/verification/{email}`       | Check if the email is found among the employees                                                                    |
-|
 | `/elevators/elevators-not-in-use`       | Retreive list of all elevators with status !"Online"                                                               |
 | `/elevators/elevators-not-in-use/count` | amount of elevators with status !"Online"                                                                          |
-|
 | `/intervention/pending`                 | Retreive list of all interventions with status pending                                                             |
-|
 | `/question/1/{id}`                      | Unavailable                                                                                                        |
 | `/question/2/{id}`                      | Unavailable                                                                                                        |
 | `/question/3/{id}`                      | Unavailable                                                                                                        |
-|
 | `/information`                          | return count of various entities in the database                                                                   |
 | `/information/HashSetCount`             | Benchmarking                                                                                                       |
 | `/information/DistinctCount`            | Benchmarking                                                                                                       |

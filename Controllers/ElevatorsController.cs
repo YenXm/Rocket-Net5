@@ -37,7 +37,7 @@ namespace RocketApi.Controllers
             return await _context.elevators.CountAsync();
         }
 
-        //----------------------------------- Retrieving all information from a specific Elevator -----------------------------------\\
+        //----------------------------------- Retrieving the current status of a specific Elevator -----------------------------------\\
 
         // GET: api/elevators/5/status
         [HttpGet("{id}/status")]
@@ -50,7 +50,7 @@ namespace RocketApi.Controllers
             return elevatorStatus;
         }
 
-        //----------------------------------- Retrieving the current status of a specific Elevator -----------------------------------\\
+        //----------------------------------- Retrieving all information from a specific Elevator -----------------------------------\\
 
         // GET: api/elevators/id
         [HttpGet("{id}")]

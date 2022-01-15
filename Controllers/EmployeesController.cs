@@ -99,7 +99,7 @@ namespace RocketApi
             return NoContent();
         }
 
-        // GET api/Employees/nicolas.genest@***REMOVED***.biz
+        // GET api/Employees/verification/nicolas.genest@***REMOVED***.biz
         [HttpGet("verification/{email}")]
         public bool VerifyEmail(string email)
         {

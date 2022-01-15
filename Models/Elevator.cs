@@ -1,7 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RocketApi.Models
 {
+
+    public class ElevatorList
+    {
+        public System.Collections.Generic.List<RocketApi.Models.Elevator> elevators { get; set; }
+    }
+
     public class Elevator
     {
         public long id { get; set; }

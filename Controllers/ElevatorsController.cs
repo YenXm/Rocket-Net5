@@ -73,7 +73,8 @@ namespace RocketApi.Controllers
         [HttpGet("elevators-not-in-use")]
         public async Task<dynamic> GetElevatorsNotInUse()
         {
-            return await _context.elevators.Where(b => ((b.status == "Offline") || (b.status == "Intervention"))).ToListAsync();
+            var elevatorList = await _context.elevators.Where(b => ((b.status == "Offline") || (b.status == "Intervention"))).ToListAsync();
+            return new ElevatorList{ elevators = elevatorList};
         }
 
         //------------------- Retrieving the number of Elevators that are not in operation at the time of the request -------------------\\

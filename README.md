@@ -10,11 +10,18 @@ Project built with dotnet 5.0.12
 
 [GetElevatorStatus](https://github.com/YenXm/Rocket-Net5/blob/59c4abb9d96772d1524643d6ae67f5fa151c0588/Controllers/ElevatorsController.cs#L57)
 
+[ChangeElevatorStatus](https://github.com/YenXm/Rocket-Net5/blob/59c4abb9d96772d1524643d6ae67f5fa151c0588/Controllers/ElevatorsController.cs#L93)
+
+I do not have a endpoint that return a list of elevetor employee, instead I have a endpoint that verify a given email addresses against the database.
+
+[VerifyEmail](https://github.com/YenXm/Rocket-Net5/blob/ba24e20a6aea0979aef08adb670dbcfd04007993/Controllers/EmployeesController.cs#L104)
+
 | resource      | description                       |
 |:--------------|:----------------------------------|
 | `\information`      | return count of various entities in the database
 | `\elevators\id`      | return the status of the given elevator id
-
+| `\elevators\id\status` | change the status of the given elevator id
+| `\Employees\verification\email` | return a boolean indicating whether the given email is verified or not
 
 ## Deployement
 The app is deployed on azure at this addresses: https://rocketapiyenxm.azurewebsites.net/api
